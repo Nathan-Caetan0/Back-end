@@ -15,3 +15,29 @@ Seu programa deve:
         pagar.
 """
 
+def calc_multa(quilos):
+    return quilos * 4.00
+
+while True:
+    try:
+        kg_pescados = float(input("Informe quantos quilos foram pescados: "))
+
+        if kg_pescados < 0:
+            print("Entrada inválida. Por favor, digite um número positivo.")
+            continue
+        
+        break
+
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número.")
+        continue
+    
+kg_excedidos = kg_pescados - 50
+
+if kg_excedidos > 0:
+    print("Quilos maximos exedidos!")
+    valor_pagar = calc_multa(kg_excedidos)
+    print(f"Você excedeu {kg_excedidos}kg do limite, você fui multado em R${valor_pagar:.2f}")
+
+else:
+    print("Você está dentro do limite diário!")
